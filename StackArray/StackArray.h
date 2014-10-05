@@ -53,20 +53,14 @@
 
 // include Arduino basic header.
 #include <Arduino.h>
+#include <defdacasa.h>
 
 // the definition of the stack class.
 //template<typename T>
 class StackArray {
   public:
-	  typedef struct
-	    {
-		  String remetente;
-	      String destinatario;
-	      String comando;
-	    }Mensagem;
 
-
-	    Mensagem * mensagens[];    // the array of the stack.
+	Mensagem * mensagens[];    // the array of the stack.
 
     // init the stack (constructor).
     StackArray ();
@@ -188,7 +182,7 @@ void StackArray::push (const Mensagem m, int i) {
 
 // pop an item from the stack.
 //template<typename T>
-StackArray::Mensagem StackArray::pop () {
+Mensagem StackArray::pop () {
   // check if the stack is empty.
   if (isEmpty ())
     exit ("STACK: can't pop item from stack: stack is empty.");
@@ -206,7 +200,7 @@ StackArray::Mensagem StackArray::pop () {
 
 // get an item from the stack.
 //template<typename T>
-StackArray::Mensagem StackArray::peek () const {
+Mensagem StackArray::peek () const {
   // check if the stack is empty.
   if (isEmpty ())
     exit ("STACK: can't peek item from stack: stack is empty.");
