@@ -48,8 +48,8 @@
 
 // header defining the interface of the source.
 // StackArray foi modificada para trabalhar com um typedef Mensagem
-#ifndef _STACKARRAY_H
-#define _STACKARRAY_H
+#ifndef _STACKARRAYJMM_H
+#define _STACKARRAYJMM_H
 
 // include Arduino basic header.
 #include <Arduino.h>
@@ -141,7 +141,7 @@ StackArray::StackArray () {
 StackArray::~StackArray () {
   free (mensagens); // deallocate the array of the stack.
 
-  mensagens = NULL; // set stack's array pointer to nowhere.
+  //mensagens = NULL; // set stack's array pointer to nowhere.
   printer = NULL;  // set the printer of stack to point nowhere.
   size = 0;        // set the size of stack to zero.
   top = 0;         // set the initial top index of the stack.
